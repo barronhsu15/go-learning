@@ -1,28 +1,17 @@
 package main
 
-import (
-	"fmt"
-	"strconv"
-)
-
-func fizzBuzz(num int) string {
-	if num%15 == 0 {
-		return "FizzBuzz"
-	}
-
-	if num%5 == 0 {
-		return "Buzz"
-	}
-
-	if num%3 == 0 {
-		return "Fizz"
-	}
-
-	return strconv.Itoa(num)
-}
+import "fmt"
 
 func main() {
-	for i := 1; i <= 100; i++ {
-		fmt.Println("", fizzBuzz(i))
+	numbers := []int{1, 3, 3, 3, 5, 5, 5, 5, 5}
+
+	m := map[int]int{}
+
+	for i := 0; i < len(numbers); i++ {
+		m[numbers[i]]++
+	}
+
+	for key, value := range m {
+		fmt.Printf("The %d has %d times\n", key, value)
 	}
 }
