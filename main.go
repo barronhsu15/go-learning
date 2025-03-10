@@ -1,24 +1,28 @@
 package main
 
 import (
-	"errors"
 	"fmt"
+	"strconv"
 )
 
-func divide(a int, b int) (int, error) {
-	if b == 0 {
-		return 0, errors.New("Cannot divide by zero")
+func fizzBuzz(num int) string {
+	if num%15 == 0 {
+		return "FizzBuzz"
 	}
 
-	return a / b, nil
+	if num%5 == 0 {
+		return "Buzz"
+	}
+
+	if num%3 == 0 {
+		return "Fizz"
+	}
+
+	return strconv.Itoa(num)
 }
 
 func main() {
-	result, err := divide(10, 0)
-
-	if err == nil {
-		fmt.Println("Result: ", result)
-	} else {
-		fmt.Println("error: ", err)
+	for i := 1; i <= 100; i++ {
+		fmt.Println("", fizzBuzz(i))
 	}
 }
