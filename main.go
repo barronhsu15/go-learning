@@ -1,11 +1,24 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
-func sum(a int, b int) int {
-	return a + b
+func divide(a int, b int) (int, error) {
+	if b == 0 {
+		return 0, errors.New("Cannot divide by zero")
+	}
+
+	return a / b, nil
 }
 
 func main() {
-	fmt.Println(sum(3, 5))
+	result, err := divide(10, 0)
+
+	if err == nil {
+		fmt.Println("Result: ", result)
+	} else {
+		fmt.Println("error: ", err)
+	}
 }
