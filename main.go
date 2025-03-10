@@ -3,11 +3,14 @@ package main
 import "fmt"
 
 func main() {
-	num := 10
+	day := 1
 
-	if num%2 == 0 {
-		fmt.Println("Even number")
-	} else {
-		fmt.Println("Odd number")
+	switch day {
+	case 1:
+		fmt.Println("Monday")
+	case 2:
+		fmt.Println("Tuesday")
+	default:
+		fmt.Println("Wrong day")
 	}
 }
