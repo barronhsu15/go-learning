@@ -3,11 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	var name string = "Barron"
-	age := 28
-	const pi = 3.1415
+	num := 10
 
-	fmt.Println("Name: ", name)
-	fmt.Println("Age: ", age)
-	fmt.Println("PI: ", pi)
+	if num%2 == 0 {
+		fmt.Println("Even number")
+	} else {
+		fmt.Println("Odd number")
+	}
 }
