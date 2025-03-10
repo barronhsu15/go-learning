@@ -2,8 +2,10 @@ package main
 
 import "fmt"
 
+func sum(a int, b int) int {
+	return a + b
+}
+
 func main() {
-	for i := 0; i <= 10; i++ {
-		fmt.Println("Count: ", i)
-	}
+	fmt.Println(sum(3, 5))
 }
