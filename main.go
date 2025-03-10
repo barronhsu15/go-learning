@@ -1,17 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
+
+func reverseString(text string) string {
+	textSplit := strings.Split(text, "")
+	result := ""
+
+	for i := len(textSplit) - 1; i >= 0; i-- {
+		result += textSplit[i]
+	}
+
+	return result
+}
 
 func main() {
-	numbers := []int{1, 3, 3, 3, 5, 5, 5, 5, 5}
-
-	m := map[int]int{}
-
-	for i := 0; i < len(numbers); i++ {
-		m[numbers[i]]++
-	}
-
-	for key, value := range m {
-		fmt.Printf("The %d has %d times\n", key, value)
-	}
+	fmt.Println(reverseString("Hello, World!"))
 }
